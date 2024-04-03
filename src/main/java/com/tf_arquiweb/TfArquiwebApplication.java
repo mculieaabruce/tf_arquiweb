@@ -13,7 +13,7 @@ public class TfArquiwebApplication {
 
 }
 class Bryan{
-int id;
+
 
 }
 class jhampier {
