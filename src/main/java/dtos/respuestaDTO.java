@@ -57,4 +57,3 @@ public class respuestaDTO {
         this.autor_resp = autor_resp;
     }
 }
-s

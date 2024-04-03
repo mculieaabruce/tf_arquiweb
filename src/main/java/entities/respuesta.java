@@ -71,4 +71,3 @@ public class respuesta {
         this.autor_resp = autor_resp;
     }
 }
-s
