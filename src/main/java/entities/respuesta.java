@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity
-
+@Table(name = "respuesta")
 public class respuesta {
 @Id
     @GeneratedValue( strategy = GenerationType.IDENTITY)

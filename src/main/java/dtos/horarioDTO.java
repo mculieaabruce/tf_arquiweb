@@ -41,4 +41,3 @@ public class horarioDTO {
         this.fecha = fecha;
     }
 }
-
