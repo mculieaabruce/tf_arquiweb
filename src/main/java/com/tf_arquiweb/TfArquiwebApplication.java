@@ -10,7 +10,6 @@ public class TfArquiwebApplication {
 		SpringApplication.run(TfArquiwebApplication.class, args);
 	}
 
-
 }
 class Bryan{
 
