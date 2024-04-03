@@ -23,5 +23,6 @@ class Andre{
 
 }
 class Alfredo{
-
+	int id;
+	String name;
 }
