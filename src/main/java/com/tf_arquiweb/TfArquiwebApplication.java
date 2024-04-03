@@ -26,3 +26,6 @@ class pamplinas {
 class Andre{
 
 }
+class Alfredo{
+
+}
