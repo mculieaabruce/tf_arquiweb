@@ -14,6 +14,7 @@ public class TfArquiwebApplication {
 }
 class Bryan{
 int id;
+int xd;
 }
 class jhampier {
 
