@@ -11,21 +11,3 @@ public class TfArquiwebApplication {
 	}
 
 }
-class Bryan{
-
-
-}
-class jhampier {
-
-}
-
-class pamplinas {
-
-}
-class Andre{
-
-}
-class Alfredo{
-	int id;
-	String name;
-}

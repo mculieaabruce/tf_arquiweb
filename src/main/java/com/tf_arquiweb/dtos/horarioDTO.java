@@ -1,4 +1,4 @@
-package dtos;
+package com.tf_arquiweb.dtos;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

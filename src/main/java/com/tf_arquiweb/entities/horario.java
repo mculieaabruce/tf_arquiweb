@@ -1,4 +1,4 @@
-package entities;
+package com.tf_arquiweb.entities;
 
 import jakarta.persistence.*;
 
@@ -13,9 +13,9 @@ public class horario {
     private int id;
     @Column(name="hora_inicio",nullable = false)
     private LocalTime hora_inicio;
-    @Column(name="hora_inicio",nullable = false)
+    @Column(name="hora_fin",nullable = false)
     private LocalTime hora_fin;
-    @Column(name="hora_inicio",nullable = false)
+    @Column(name="fecha",nullable = false)
     private LocalDate fecha;
 
     public horario(int id, LocalTime hora_inicio, LocalTime hora_fin, LocalDate fecha) {

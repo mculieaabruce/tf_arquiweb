@@ -1,4 +1,4 @@
-package dtos;
+package com.tf_arquiweb.dtos;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

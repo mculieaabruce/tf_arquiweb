@@ -1,4 +1,4 @@
-package entities;
+package com.tf_arquiweb.entities;
 
 import jakarta.persistence.*;
 

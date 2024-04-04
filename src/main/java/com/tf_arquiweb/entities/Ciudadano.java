@@ -1,4 +1,4 @@
-package entities;
+package com.tf_arquiweb.entities;
 
 import jakarta.persistence.*;
 
@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "ciudadano")
-public class ciudadano {
+public class Ciudadano {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -19,9 +19,9 @@ public class ciudadano {
     @Column(name = "FechaNacimiento",nullable = false)
     private LocalDate fecha_nac;
 
-    public ciudadano(){}
+    public Ciudadano(){}
 
-    public ciudadano(int id, String dni, String nombre, String apellido, LocalDate fecha_nac){
+    public Ciudadano(int id, String dni, String nombre, String apellido, LocalDate fecha_nac){
         this.id = id;
         this.dni = dni;
         this.nombre = nombre;
