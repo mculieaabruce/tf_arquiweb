@@ -29,4 +29,5 @@ public class ciudadanoController {
             return m.map(y,ciudadanoDTO.class);
         }).collect(Collectors.toList());
     }
+    /*https://stackoverflow.com/questions/61202937/json-parse-error-cannot-deserialize-value-of-type-java-time-localdatetime-fro*/
 }
