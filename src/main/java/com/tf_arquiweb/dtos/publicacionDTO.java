@@ -2,6 +2,8 @@ package com.tf_arquiweb.dtos;
 
 
 
+import com.tf_arquiweb.entities.foro;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -12,7 +14,7 @@ public class publicacionDTO {
     private LocalTime hora_creacion;
     private String autor_publi ;
     private String estado;
-    private  foro foro;
+    private foro foro;
 
     public int getId() {
         return id;

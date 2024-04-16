@@ -8,5 +8,24 @@ public class foro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String nombre;
+    private String nombreForo;
+    @ManyToOne
+    @JoinColumn(name = "idUsuario")
+    private Usuario usuario;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombreForo;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombreForo = nombre;
+    }
 }
