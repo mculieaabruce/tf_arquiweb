@@ -7,8 +7,6 @@ import java.time.LocalTime;
 
 public class respuestaDTO {
     private int id;
-
-
     private String contenido;
 
     private LocalDate fecha_creacion;

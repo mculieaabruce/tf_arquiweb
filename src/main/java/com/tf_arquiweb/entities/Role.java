@@ -2,14 +2,18 @@ package com.tf_arquiweb.entities;
 
 import jakarta.persistence.*;
 
-public class Role {
+import java.io.Serializable;
+
+@Entity
+@Table(name = "roles", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id","rol"})})
+public class Role implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String rol;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private Usuario user;
 

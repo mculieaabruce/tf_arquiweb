@@ -12,10 +12,10 @@ public class Usuario {
     private int idUsuario;
     @Column(name = "nombre",nullable = false,length = 45)
     private String nombreusuario;
-    @Column(name="rolusuario",nullable = false,length = 30)
-    private String rol_usuario;
 
-    @ManyToOne
+    private Boolean enabled;
+
+    @OneToMany
     @JoinColumn(name = "user_id")
     private List<Role> roles;
 
@@ -25,7 +25,6 @@ public class Usuario {
     public Usuario(int idUsuario, String nombreusuario, String rol_usuario, List<Role> roles) {
         this.idUsuario = idUsuario;
         this.nombreusuario = nombreusuario;
-        this.rol_usuario = rol_usuario;
         this.roles = roles;
     }
 
@@ -45,14 +44,9 @@ public class Usuario {
         this.nombreusuario = nombreusuario;
     }
 
-    public String getRol_usuario() {
-        return rol_usuario;
-    }
+    public Boolean getEnabled() {return enabled;}
 
-    public void setRol_usuario(String rol_usuario) {
-        this.rol_usuario = rol_usuario;
-    }
-
+    public void setEnabled(Boolean enabled) {this.enabled = enabled;}
     public List<Role> getRoles() {
         return roles;
     }
