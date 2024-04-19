@@ -8,6 +8,8 @@ import java.io.Serializable;
 @Table(name = "roles", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id","rol"})})
 public class Role implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

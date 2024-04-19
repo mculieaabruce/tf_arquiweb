@@ -11,7 +11,10 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUsuario;
     @Column(name = "nombre",nullable = false,length = 45)
-    private String nombreusuario;
+    private String username;
+
+    @Column(name = "contraseña",nullable = false,length = 45)
+    private String password;
 
     private Boolean enabled;
 
@@ -24,7 +27,8 @@ public class Usuario {
 
     public Usuario(int idUsuario, String nombreusuario, String rol_usuario, List<Role> roles) {
         this.idUsuario = idUsuario;
-        this.nombreusuario = nombreusuario;
+        this.username = nombreusuario;
+        this.password = password;
         this.roles = roles;
     }
 
@@ -36,17 +40,30 @@ public class Usuario {
         this.idUsuario = idUsuario;
     }
 
-    public String getNombreusuario() {
-        return nombreusuario;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNombreusuario(String nombreusuario) {
-        this.nombreusuario = nombreusuario;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public Boolean getEnabled() {return enabled;}
+    public String getPassword() {
+        return password;
+    }
 
-    public void setEnabled(Boolean enabled) {this.enabled = enabled;}
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+
     public List<Role> getRoles() {
         return roles;
     }
