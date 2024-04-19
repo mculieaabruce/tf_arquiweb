@@ -4,7 +4,7 @@ import jakarta.persistence.Column;
 
 public class UsuarioDTO {
     private int idUsuario;
-    private String nombreusuario;
+    private String username;
     private Boolean enabled;
 
     public int getIdUsuario() {
@@ -16,11 +16,11 @@ public class UsuarioDTO {
     }
 
     public String getNombreusuario() {
-        return nombreusuario;
+        return username;
     }
 
     public void setNombreusuario(String nombreusuario) {
-        this.nombreusuario = nombreusuario;
+        this.username = nombreusuario;
     }
 
     public Boolean getEnabled() {return enabled;}
