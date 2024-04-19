@@ -2,6 +2,8 @@ package com.tf_arquiweb.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "Usuario")
 public class Usuario {
@@ -13,13 +15,18 @@ public class Usuario {
     @Column(name="rolusuario",nullable = false,length = 30)
     private String rol_usuario;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private List<Role> roles;
+
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, String nombreusuario, String rol_usuario) {
+    public Usuario(int idUsuario, String nombreusuario, String rol_usuario, List<Role> roles) {
         this.idUsuario = idUsuario;
         this.nombreusuario = nombreusuario;
         this.rol_usuario = rol_usuario;
+        this.roles = roles;
     }
 
     public int getIdUsuario() {
@@ -44,5 +51,13 @@ public class Usuario {
 
     public void setRol_usuario(String rol_usuario) {
         this.rol_usuario = rol_usuario;
+    }
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
     }
 }
