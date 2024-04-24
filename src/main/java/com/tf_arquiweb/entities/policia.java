@@ -10,9 +10,9 @@ public class policia {
     private int id;
     @Column(name = "nombre",nullable = false,length = 15)
     private String nombre;
-    @Column(name = "nombre",nullable = false,length = 20)
+    @Column(name = "apellido",nullable = false,length = 20)
     private String apellido;
-    @Column(name = "nombre",nullable = false,length = 10)
+    @Column(name = "num_placa",nullable = false,length = 10)
     private String num_placa;
     @ManyToOne
     @JoinColumn(name = "comisaria_id")
