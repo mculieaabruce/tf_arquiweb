@@ -13,12 +13,13 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.GenericFilterBean;
+import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 import java.util.logging.Logger;
 
 @Component
-public class JwtRequestFilter {
+public class JwtRequestFilter extends OncePerRequestFilter {
     private static final Logger logger = Logger.getLogger(JwtRequestFilter.class.getName());
 
     @Autowired
