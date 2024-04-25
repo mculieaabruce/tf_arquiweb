@@ -13,7 +13,7 @@ public class caso {
     private alertaMovil alertaMovil;
     @Column(name = "estado",nullable = false,length = 15)
     private String estado;
-    @Column(name = "estado",nullable = false,length = 100)
+    @Column(name = "comentario",nullable = false,length = 100)
     private String comentario;
     @ManyToOne
     @JoinColumn(name = "foro_id")

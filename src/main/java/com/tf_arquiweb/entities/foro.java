@@ -13,6 +13,15 @@ public class foro {
     @JoinColumn(name = "idUsuario")
     private Usuario usuario;
 
+    public foro() {
+    }
+
+    public foro(int id, String nombreForo, Usuario usuario) {
+        this.id = id;
+        this.nombreForo = nombreForo;
+        this.usuario = usuario;
+    }
+
     public int getId() {
         return id;
     }
@@ -21,11 +30,19 @@ public class foro {
         this.id = id;
     }
 
-    public String getNombre() {
+    public String getNombreForo() {
         return nombreForo;
     }
 
-    public void setNombre(String nombre) {
-        this.nombreForo = nombre;
+    public void setNombreForo(String nombreForo) {
+        this.nombreForo = nombreForo;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }
