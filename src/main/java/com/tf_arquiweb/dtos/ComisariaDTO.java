@@ -1,9 +1,6 @@
 package com.tf_arquiweb.dtos;
 
 import com.tf_arquiweb.entities.distrito;
-import jakarta.persistence.Column;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 
 public class ComisariaDTO {
     private int idComisaria;
