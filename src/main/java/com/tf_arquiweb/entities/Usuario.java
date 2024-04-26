@@ -10,10 +10,10 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUsuario;
-    @Column(name = "nombre",nullable = false,length = 45)
+    @Column(name = "nombre",unique = true,length = 45)
     private String username;
 
-    @Column(name = "contraseña",nullable = false,length = 45)
+    @Column(name = "contraseña",length = 45)
     private String password;
 
     private Boolean enabled;
