@@ -12,6 +12,7 @@ public interface IcasoService {
     public List<caso> list();
 
     List<casoXdistritoDTO> findCasosPorDistritoId();
+    List<casoXdistritoDTO> findCasosResueltosPorDistrito();
 
 
 

@@ -37,5 +37,13 @@ public class casoController {
             return m.map(y, casoXdistritoDTO.class);
         }).collect(Collectors.toList());
     };
+
+    @GetMapping("/casosresueltoxdistrito")
+    public List<casoXdistritoDTO> resueltito(){
+        return cS.findCasosResueltosPorDistrito().stream().map(y->{
+            ModelMapper m = new ModelMapper();
+            return m.map(y, casoXdistritoDTO.class);
+        }).collect(Collectors.toList());
+    };
 }
 

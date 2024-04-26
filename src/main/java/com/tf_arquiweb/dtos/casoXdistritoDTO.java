@@ -7,6 +7,16 @@ public class casoXdistritoDTO {
 private int ncaso;
 private String nomDistrito;
 
+private int ncasoresuelto;
+
+    public int getNcasoresuelto() {
+        return ncasoresuelto;
+    }
+
+    public void setNcasoresuelto(int ncasoresuelto) {
+        this.ncasoresuelto = ncasoresuelto;
+    }
+
     public int getNcaso() {
         return ncaso;
     }

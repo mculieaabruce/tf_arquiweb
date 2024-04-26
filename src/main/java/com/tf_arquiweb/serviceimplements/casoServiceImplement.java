@@ -30,11 +30,10 @@ public class casoServiceImplement implements IcasoService {
     public List<casoXdistritoDTO> findCasosPorDistritoId() {
         return cR.findCasosPorDistritoId();
     }
-
-
-    public interface CasoService{
-
-
+    
+    public List<casoXdistritoDTO> findCasosResueltosPorDistrito()
+    {
+        return cR.findCasosResueltosPorDistrito();
     }
 
 }
