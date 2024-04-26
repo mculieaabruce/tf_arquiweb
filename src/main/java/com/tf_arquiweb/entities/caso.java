@@ -1,7 +1,7 @@
 package com.tf_arquiweb.entities;
 
 import jakarta.persistence.*;
-
+/*xddd*/
 @Entity
 @Table(name = "caso")
 public class caso {
