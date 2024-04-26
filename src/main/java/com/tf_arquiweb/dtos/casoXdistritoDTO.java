@@ -10,6 +10,7 @@ private String nomDistrito;
 private int ncasoresuelto;
 
     public int getNcasoresuelto() {
+
         return ncasoresuelto;
     }
 

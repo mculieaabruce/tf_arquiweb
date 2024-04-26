@@ -6,7 +6,6 @@ import com.tf_arquiweb.repositories.casoRepository;
 import com.tf_arquiweb.serviceinterfaces.IcasoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
