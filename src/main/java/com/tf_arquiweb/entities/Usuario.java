@@ -13,7 +13,7 @@ public class Usuario {
     @Column(name = "nombre",unique = true,length = 45)
     private String username;
 
-    @Column(name = "contraseña",length = 45)
+    @Column(name = "contraseña",length = 200)
     private String password;
 
     private Boolean enabled;
