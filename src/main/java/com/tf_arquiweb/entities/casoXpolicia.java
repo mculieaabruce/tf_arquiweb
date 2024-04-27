@@ -8,14 +8,14 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "casoXpolicia")
 public class casoXpolicia{
-    @Id
-    @ManyToOne
-    @JoinColumn(name = "caso_id")
-    private caso caso;
+    @EmbeddedId
+    private Union id;
 
-    @Id
     @ManyToOne
-    @JoinColumn(name = "policia_id")
+    @MapsId("caso_id")
+    private caso caso;
+    @ManyToOne
+    @MapsId("policia_id")
     private policia policia;
     private LocalDate fecha_revision;
     @Column(name = "estado",nullable = false,length = 20)
