@@ -2,15 +2,17 @@ package com.tf_arquiweb.entities;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "casoXpolicia")
-public class casoXpolicia {
+public class casoXpolicia{
     @Id
     @ManyToOne
     @JoinColumn(name = "caso_id")
     private caso caso;
+
     @Id
     @ManyToOne
     @JoinColumn(name = "policia_id")

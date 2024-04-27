@@ -22,4 +22,9 @@ public class casoServiceImplement implements IcasoService {
     public List<caso> list() {
         return cR.findAll();
     }
+
+    @Override
+    public List<String[]> ciudadanoxcaso() {
+        return cR.ciudadanoxcaso();
+    }
 }
