@@ -12,17 +12,14 @@ import java.util.List;
 public interface casoRepository extends JpaRepository<caso, Integer> {
     @Query(value = "select \n" +
             "ci.nombre,\n" +
-            "\tcount(caso_id) as cantidad_de_casos\n" +
+            "count(caso_id) as cantidad_de_casos \n" +
             "from caso ca \n" +
             "inner join \n" +
             "alerta_movil m on \n" +
             "cs.alerta_movil_id = m.id \n" +
-            "inner join\n" +
+            "inner join \n" +
             "ciudadano ci on \n" +
-            "m.ciudadano_id = ci.id\n" +
-            "group by m.ciudadano_id\n" +
-            "from green_area ga \n" +
-            "inner join Maintenance m on ga.id_green_area = m.greenarea_id \n" +
-            "group by ga.name_green_area", nativeQuery = true)
+            "m.ciudadano_id = ci.id \n" +
+            "group by m.ciudadano_id \n", nativeQuery = true)
     public List<String[]> ciudadanoxcaso();
 }
