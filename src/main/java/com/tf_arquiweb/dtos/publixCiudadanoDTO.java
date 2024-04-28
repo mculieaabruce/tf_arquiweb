@@ -1,12 +1,10 @@
 package com.tf_arquiweb.dtos;
 
-import com.tf_arquiweb.entities.publicacion;
-
 public class publixCiudadanoDTO {
     private int IdUsuario;
     private int quantityPubli;
 
-    public int getIdUsuario() {
+    public int getIdUsuario(int i) {
         return IdUsuario;
     }
 
@@ -14,7 +12,7 @@ public class publixCiudadanoDTO {
         IdUsuario = idUsuario;
     }
 
-    public int getQuantityPubli() {
+    public int getQuantityPubli(int i) {
         return quantityPubli;
     }
 

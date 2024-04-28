@@ -7,6 +7,7 @@ import com.tf_arquiweb.dtos.casoresueltoxpoliciaDTO;
 import com.tf_arquiweb.serviceinterfaces.IcasoXpoliciaService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -46,6 +47,7 @@ public class casoXpoliciaController {
         }
         return dtoLista;
     };
+    @PreAuthorize("hasAnyAuthority('ciudadano')")
     @GetMapping("/casosresueltoxpolicia")
     public List<casoresueltoxpoliciaDTO> casosresueltoxpolicia(){
         List<String[]> filaLista = cXpS.casosresueltosxpolicia();

@@ -20,4 +20,9 @@ public class alertaMovilServiceImplement implements IalertaMovilService {
     public List<alertaMovil> list() {
         return aR.findAll();
     }
+
+    @Override
+    public List<String[]> AlertasxCiudadanoxDistrito() {
+        return aR.AlertasxCiudadanoxDistrito();
+    }
 }
