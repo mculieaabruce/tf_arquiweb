@@ -10,7 +10,7 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idUsuario;
-    @Column(name = "nombre",unique = true,length = 45)
+    @Column(name = "nombre",unique = true,length = 200)
     private String username;
 
     @Column(name = "contraseña",length = 200)
