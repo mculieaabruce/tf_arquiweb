@@ -4,34 +4,34 @@ import com.tf_arquiweb.entities.caso;
 import com.tf_arquiweb.entities.distrito;
 public class casoXdistritoDTO {
 
-private int ncaso;
+    private String distrito;
 
-private String nomDistrito;
+    private Integer numero_de_casos;
 
-private int ncasoresuelto;
+    private Integer casos_resueltos;
 
-    public int getNcasoresuelto() {
 
-        return ncasoresuelto;
+    public String getDistrito() {
+        return distrito;
     }
 
-    public void setNcasoresuelto(int ncasoresuelto) {
-        this.ncasoresuelto = ncasoresuelto;
+    public void setDistrito(String distrito) {
+        this.distrito = distrito;
     }
 
-    public int getNcaso() {
-        return ncaso;
+    public Integer getNumero_de_casos() {
+        return numero_de_casos;
     }
 
-    public void setNcaso(int ncaso) {
-        this.ncaso = ncaso;
+    public void setNumero_de_casos(Integer numero_de_casos) {
+        this.numero_de_casos = numero_de_casos;
     }
 
-    public String getNomDistrito() {
-        return nomDistrito;
+    public Integer getCasos_resueltos() {
+        return casos_resueltos;
     }
 
-    public void setNomDistrito(String nomDistrito) {
-        this.nomDistrito = nomDistrito;
+    public void setCasos_resueltos(Integer casos_resueltos) {
+        this.casos_resueltos = casos_resueltos;
     }
 }

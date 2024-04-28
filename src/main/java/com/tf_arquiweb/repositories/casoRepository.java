@@ -22,7 +22,7 @@ public interface casoRepository extends JpaRepository<caso, Integer> {
             "m.ciudadano_id = ci.id \n" +
             "group by m.ciudadano_id \n", nativeQuery = true)
     public List<String[]> ciudadanoxcaso();
-    @Query(value = "SELECT d.nombre, count(c.id) from caso as c \n " +
+    @Query(value = "SELECT d.nombre AS distrito, count(c.id) AS numero_de_casos from caso as c \n " +
             "join caso_xpolicia as casopolicia on c.id = casopolicia.caso_id \n " +
             "join policia as p on casopolicia.policia_id = p.id \n " +
             "join comisaria as k on k.id_comisaria = p.comisaria_id \n " +
