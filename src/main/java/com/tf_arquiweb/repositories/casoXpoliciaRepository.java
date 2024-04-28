@@ -13,8 +13,8 @@ public interface casoXpoliciaRepository extends JpaRepository<casoXpolicia, Inte
             "p.nombre,\n" +
             "p.num_placa,\n" +
             "d.nombre,\n" +
-            "cp.fecha \n" +
-            "from casoXpolicia cp \n" +
+            "cp.fecha_revision \n" +
+            "from caso_xpolicia cp \n" +
             "inner join \n" +
             "policia p on \n" +
             "cp.policia_id = p.id \n" +
@@ -24,7 +24,7 @@ public interface casoXpoliciaRepository extends JpaRepository<casoXpolicia, Inte
             "inner join \n" +
             "distrito d on \n" +
             "co.distrito_id = d.id \n" +
-            "where cp.estado = 'En proceso' " +
+            "where cp.estado = 'EN PROCESO' " +
             "order by cp.fecha desc", nativeQuery = true)
     public List<String[]> casosAtrasados();
 
