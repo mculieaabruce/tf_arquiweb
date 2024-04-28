@@ -32,7 +32,7 @@ public class casoXpoliciaController {
         }).collect(Collectors.toList());
     }
 
-    @GetMapping
+    @GetMapping("/CasosAtrasados")
     public List<casosAtrasadosDTO> casosAtrasados(){
         List<String[]> filaLista = cXpS.casosAtrasados();
         List<casosAtrasadosDTO> dtoLista = new ArrayList<>();

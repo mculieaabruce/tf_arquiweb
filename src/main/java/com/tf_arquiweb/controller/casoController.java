@@ -30,7 +30,7 @@ public class casoController {
             return m.map(y,casoDTO.class);
         }).collect(Collectors.toList());
     }
-    @GetMapping
+    @GetMapping("/CasoxCiudadano")
     public List<ciudadanoXcasoDTO> casoXciudadano(){
         List<String[]> filaLista = cS.ciudadanoxcaso();
         List<ciudadanoXcasoDTO> dtoLista = new ArrayList<>();
