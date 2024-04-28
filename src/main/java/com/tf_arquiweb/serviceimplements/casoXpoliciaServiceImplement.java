@@ -21,9 +21,4 @@ public class casoXpoliciaServiceImplement implements IcasoXpoliciaService {
     public List<casoXpolicia> list() {
         return cR.findAll();
     }
-
-    @Override
-    public List<String[]> casosAtrasados() {
-        return cR.casosAtrasados();
-    }
 }

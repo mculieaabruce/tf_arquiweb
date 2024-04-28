@@ -7,5 +7,4 @@ import java.util.List;
 public interface IcasoXpoliciaService {
     public void insert(casoXpolicia casoXpolicia);
     public List<casoXpolicia> list();
-    public List<String[]> casosAtrasados();
 }

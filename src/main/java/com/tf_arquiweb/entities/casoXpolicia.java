@@ -2,20 +2,18 @@ package com.tf_arquiweb.entities;
 
 import jakarta.persistence.*;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "casoXpolicia")
-public class casoXpolicia{
-    @EmbeddedId
-    private Union id;
-
+public class casoXpolicia {
+    @Id
     @ManyToOne
-    @MapsId("caso_id")
+    @JoinColumn(name = "caso_id")
     private caso caso;
+    @Id
     @ManyToOne
-    @MapsId("policia_id")
+    @JoinColumn(name = "policia_id")
     private policia policia;
     private LocalDate fecha_revision;
     @Column(name = "estado",nullable = false,length = 20)
