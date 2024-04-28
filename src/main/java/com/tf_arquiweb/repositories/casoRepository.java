@@ -12,7 +12,7 @@ import java.util.List;
 public interface casoRepository extends JpaRepository<caso, Integer> {
     @Query(value = "select \n" +
             "ci.nombre,\n" +
-            "count(caso_id) as cantidad_de_casos \n" +
+            "count(ca.id) as cantidad_de_casos \n" +
             "from caso ca \n" +
             "inner join \n" +
             "alerta_movil m on \n" +
