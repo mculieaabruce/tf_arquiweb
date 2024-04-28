@@ -1,11 +1,15 @@
 package com.tf_arquiweb.dtos;
 
+import com.tf_arquiweb.entities.publicacion;
 import jakarta.persistence.Column;
+
+import java.util.List;
 
 public class UsuarioDTO {
     private int idUsuario;
     private String username;
     private Boolean enabled;
+
 
     public int getIdUsuario() {
         return idUsuario;

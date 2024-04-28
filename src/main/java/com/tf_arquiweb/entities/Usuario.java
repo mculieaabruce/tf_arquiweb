@@ -22,14 +22,20 @@ public class Usuario {
     @JoinColumn(name = "user_id")
     private List<Role> roles;
 
+    @OneToMany
+    @JoinColumn(name = "autor_id")
+    private List<publicacion> publis;
+
     public Usuario() {
     }
 
-    public Usuario(int idUsuario, String nombreusuario, String rol_usuario, List<Role> roles) {
+    public Usuario(int idUsuario, String username, String password, Boolean enabled, List<Role> roles, List<publicacion> publis) {
         this.idUsuario = idUsuario;
-        this.username = nombreusuario;
+        this.username = username;
         this.password = password;
+        this.enabled = enabled;
         this.roles = roles;
+        this.publis = publis;
     }
 
     public int getIdUsuario() {
@@ -70,5 +76,13 @@ public class Usuario {
 
     public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+
+    public List<publicacion> getPublis() {
+        return publis;
+    }
+
+    public void setPublis(List<publicacion> publis) {
+        this.publis = publis;
     }
 }
