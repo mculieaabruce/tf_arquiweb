@@ -13,8 +13,6 @@ public class casoServiceImplement implements IcasoService {
     @Autowired
     private casoRepository cR;
 
-
-
     @Override
     public void insert(caso c) {
         cR.save(c);

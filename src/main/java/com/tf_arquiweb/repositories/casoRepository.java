@@ -22,7 +22,6 @@ public interface casoRepository extends JpaRepository<caso, Integer> {
                 "group by d.nombre",nativeQuery = true)
 
         List<casoXdistritoDTO> findCasosPorDistritoId();
-
         @Query(value ="SELECT d.nombre AS distrito, COUNT(c.id) AS casos_resueltos \n" +
                 "FROM caso AS c\n" +
                 "JOIN caso_xpolicia AS casopolicia ON c.id = casopolicia.caso_id\n" +

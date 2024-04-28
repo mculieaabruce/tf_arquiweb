@@ -29,6 +29,7 @@ public class casoController {
             return m.map(y,casoDTO.class);
         }).collect(Collectors.toList());
     }
+
     @GetMapping("/casosxdistrito")
     public List<casoXdistritoDTO> casito(){
         return cS.findCasosPorDistritoId().stream().map(y->{

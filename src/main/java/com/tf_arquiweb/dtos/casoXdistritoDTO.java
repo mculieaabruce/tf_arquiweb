@@ -5,6 +5,7 @@ import com.tf_arquiweb.entities.distrito;
 public class casoXdistritoDTO {
 
 private int ncaso;
+
 private String nomDistrito;
 
 private int ncasoresuelto;

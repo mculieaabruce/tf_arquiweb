@@ -11,7 +11,6 @@ import java.util.List;
 public interface IcasoService {
     public void insert(caso caso);
     public List<caso> list();
-
     List<casoXdistritoDTO> findCasosPorDistritoId();
     List<casoXdistritoDTO> findCasosResueltosPorDistrito();
 
