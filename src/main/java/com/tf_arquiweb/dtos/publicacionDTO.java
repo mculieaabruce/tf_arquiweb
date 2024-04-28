@@ -2,7 +2,9 @@ package com.tf_arquiweb.dtos;
 
 
 
+import com.tf_arquiweb.entities.Usuario;
 import com.tf_arquiweb.entities.foro;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -12,9 +14,8 @@ public class publicacionDTO {
     private String descripcion;
     private LocalDate fecha_creacion;
     private LocalTime hora_creacion;
-    private String autor_publi ;
     private String estado;
-    private foro foro;
+
 
     public int getId() {
         return id;
@@ -48,14 +49,6 @@ public class publicacionDTO {
         this.hora_creacion = hora_creacion;
     }
 
-    public String getAutor_publi() {
-        return autor_publi;
-    }
-
-    public void setAutor_publi(String autor_publi) {
-        this.autor_publi = autor_publi;
-    }
-
     public String getEstado() {
         return estado;
     }
@@ -64,11 +57,4 @@ public class publicacionDTO {
         this.estado = estado;
     }
 
-    public com.tf_arquiweb.entities.foro getForo() {
-        return foro;
-    }
-
-    public void setForo(com.tf_arquiweb.entities.foro foro) {
-        this.foro = foro;
-    }
 }

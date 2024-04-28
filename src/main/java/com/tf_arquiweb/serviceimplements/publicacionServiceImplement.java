@@ -22,4 +22,9 @@ public class publicacionServiceImplement implements  IpublicacionService{
     public List<publicacion> list() {
         return pR.findAll();
     }
+
+    @Override
+    public List<String[]> publixCiudadano() {
+        return pR.publixCiudadano();
+    }
 }

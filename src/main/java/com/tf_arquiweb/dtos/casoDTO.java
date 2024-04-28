@@ -10,6 +10,9 @@ public class casoDTO {
     private String comentario;
     private foro foro;
 
+    public casoDTO(String object, long object1) {
+    }
+
     public int getId() {
         return id;
     }
