@@ -3,10 +3,10 @@ package com.tf_arquiweb.dtos;
 import java.time.LocalDate;
 
 public class casosAtrasadosDTO {
-        public String nombre;
-        public String num_placa;
-        public String distrito;
-        public LocalDate fecha;
+    public String nombre;
+    public String num_placa;
+    public String distrito;
+    public LocalDate fecha;
 
     public String getNombre() {
         return nombre;

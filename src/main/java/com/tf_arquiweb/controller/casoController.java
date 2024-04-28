@@ -23,7 +23,7 @@ public class casoController {
         caso c=m.map(casoDTO,caso.class);
         cS.insert(c);
     }
-    @GetMapping
+    @GetMapping("/casoXciudadano")
     public List<casoDTO> listar(){
         return cS.list().stream().map(y->{
             ModelMapper m = new ModelMapper();
