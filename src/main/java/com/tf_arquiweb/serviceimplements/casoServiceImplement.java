@@ -24,12 +24,18 @@ public class casoServiceImplement implements IcasoService {
         return cR.findAll();
     }
     @Override
-    public List<casoXdistritoDTO> findCasosPorDistritoId() {
+    public List<String[]> findCasosPorDistritoId() {
         return cR.findCasosPorDistritoId();
     }
 
-    public List<casoXdistritoDTO> findCasosResueltosPorDistrito()
+    public List<String[]> findCasosResueltosPorDistrito()
     {
         return cR.findCasosResueltosPorDistrito();
     }
+
+    @Override
+    public List<String[]> ciudadanoxcaso() {
+        return cR.ciudadanoxcaso();
+    }
+
 }
