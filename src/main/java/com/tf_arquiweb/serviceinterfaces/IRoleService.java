@@ -12,5 +12,4 @@ public interface IRoleService {
 
     public void delete(Long idRol);
 
-    public Optional<Role> listID(Long idRol);
 }
