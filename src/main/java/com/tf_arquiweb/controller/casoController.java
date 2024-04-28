@@ -1,6 +1,7 @@
 package com.tf_arquiweb.controller;
 
 import com.tf_arquiweb.dtos.casoDTO;
+import com.tf_arquiweb.dtos.casoXdistritoDTO;
 import com.tf_arquiweb.entities.caso;
 import com.tf_arquiweb.serviceinterfaces.IcasoService;
 import org.modelmapper.ModelMapper;
@@ -28,4 +29,19 @@ public class casoController {
             return m.map(y,casoDTO.class);
         }).collect(Collectors.toList());
     }
+    @GetMapping("/casosxdistrito")
+    public List<casoXdistritoDTO> casito(){
+        return cS.findCasosPorDistritoId().stream().map(y->{
+            ModelMapper m = new ModelMapper();
+            return m.map(y, casoXdistritoDTO.class);
+        }).collect(Collectors.toList());
+    };
+
+    @GetMapping("/casosresueltoxdistrito")
+    public List<casoXdistritoDTO> resueltito(){
+        return cS.findCasosResueltosPorDistrito().stream().map(y->{
+            ModelMapper m = new ModelMapper();
+            return m.map(y, casoXdistritoDTO.class);
+        }).collect(Collectors.toList());
+    };
 }
