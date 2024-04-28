@@ -20,12 +20,14 @@ import java.util.stream.Collectors;
 public class casoXpoliciaController {
     @Autowired
     private IcasoXpoliciaService cXpS;
+    @PreAuthorize("hasAnyAuthority('policia')")
     @PostMapping
     public void insertar(@RequestBody casoXpoliciaDTO casoXpoliciaDTO){
         ModelMapper m= new ModelMapper();
         casoXpolicia c=m.map(casoXpoliciaDTO,casoXpolicia.class);
         cXpS.insert(c);
     }
+    @PreAuthorize("hasAnyAuthority('policia')")
     @GetMapping
     public List<casoXpoliciaDTO> listar(){
         return cXpS.list().stream().map(y->{
@@ -33,6 +35,7 @@ public class casoXpoliciaController {
             return m.map(y,casoXpoliciaDTO.class);
         }).collect(Collectors.toList());
     }
+    @PreAuthorize("hasAnyAuthority('policia')")
     @GetMapping("/casosAtrasados")
     public List<casosAtrasadosDTO> casosAtrasados(){
         List<String[]> filaLista = cXpS.casosAtrasados();

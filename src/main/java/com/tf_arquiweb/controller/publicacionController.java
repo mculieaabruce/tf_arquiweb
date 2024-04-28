@@ -6,6 +6,7 @@ import com.tf_arquiweb.entities.publicacion;
 import com.tf_arquiweb.serviceinterfaces.IpublicacionService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,11 +21,13 @@ import java.util.stream.Collectors;
 public class publicacionController {
     @Autowired
     private IpublicacionService pS;
+    @PreAuthorize("hasAnyAuthority('admin','ciudadano','policia')")
     public void insertar(@RequestBody publicacionDTO publicacionDTO){
         ModelMapper m =new ModelMapper();
         publicacion ma = m.map(publicacionDTO, publicacion.class);
         pS.insert(ma);
     }
+    @PreAuthorize("hasAnyAuthority('admin','ciudadano','policia')")
     @GetMapping
     public List<publicacionDTO> listar(){
         return pS.list().stream().map(y->{
@@ -32,6 +35,7 @@ public class publicacionController {
             return m.map(y, publicacionDTO.class);
         }).collect(Collectors.toList());
     }
+    @PreAuthorize("hasAnyAuthority('admin','ciudadano','policia')")
     @GetMapping("/CantidadaPublicacionesXCiudadano")
     public List<publixCiudadanoDTO> QuantityCity(){
         List<String[]> filaLista = pS.publixCiudadano();

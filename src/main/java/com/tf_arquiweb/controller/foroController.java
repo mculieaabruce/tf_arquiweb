@@ -6,6 +6,7 @@ import com.tf_arquiweb.entities.foro;
 import com.tf_arquiweb.entities.publicacion;
 import com.tf_arquiweb.serviceinterfaces.IforoService;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,11 +18,13 @@ import java.util.stream.Collectors;
 @RequestMapping("foro")
 public class foroController {
     private IforoService fS;
+    @PreAuthorize("hasAnyAuthority('admin')")
     public void insertar(@RequestBody foroDTO FORODTO){
         ModelMapper m =new ModelMapper();
         foro fo = m.map(FORODTO, foro.class);
         fS.insert(fo);
     }
+    @PreAuthorize("hasAnyAuthority('admin')")
     public List<foroDTO> listar(){
         return fS.list().stream().map(y->{
             ModelMapper m = new ModelMapper();

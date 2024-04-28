@@ -6,6 +6,7 @@ import com.tf_arquiweb.entities.Usuario;
 import com.tf_arquiweb.serviceinterfaces.IUsuarioService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,7 @@ public class UsuarioController {
     private IUsuarioService iU;
     @Autowired
     private PasswordEncoder passwordEncoder;
+    @PreAuthorize("hasAnyAuthority('admin')")
     @PostMapping
     public void Registrar(@RequestBody UsuarioDTO usuarioDTO){
         ModelMapper m= new ModelMapper();
@@ -28,6 +30,7 @@ public class UsuarioController {
         u.setPassword(encodedPassword);
         iU.insert(u);
     }
+    @PreAuthorize("hasAnyAuthority('admin')")
     @GetMapping
     public List<UsuarioDTO> listar(){
         return iU.list().stream().map(y->{

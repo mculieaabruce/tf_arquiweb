@@ -6,6 +6,7 @@ import com.tf_arquiweb.entities.respuesta;
 import com.tf_arquiweb.serviceinterfaces.IrespuestaService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -17,12 +18,14 @@ import java.util.stream.Collectors;
 public class respuestaController {
     @Autowired
     private IrespuestaService Ic;
+    @PreAuthorize("hasAnyAuthority('admin','ciudadano','policia')")
     @PostMapping
     public void insertar(@RequestBody respuesta RespuestaDTO){
         ModelMapper m= new ModelMapper();
         respuesta c=m.map(RespuestaDTO,respuesta.class);
         Ic.insert(c);
     }
+    @PreAuthorize("hasAnyAuthority('admin','ciudadano','policia')")
     @GetMapping
     public List<respuestaDTO> listar(){
         return Ic.list().stream().map(y->{
@@ -30,6 +33,7 @@ public class respuestaController {
             return m.map(y,respuestaDTO.class);
         }).collect(Collectors.toList());
     }
+    @PreAuthorize("hasAnyAuthority('admin','ciudadano','policia')")
     @GetMapping("/respuestaxpolicia")
     public List<respuestaxpoliciaDTO> respuestasxpolicia(){
         List<String[]> filaLista = Ic.listrespuestaxpolicia();

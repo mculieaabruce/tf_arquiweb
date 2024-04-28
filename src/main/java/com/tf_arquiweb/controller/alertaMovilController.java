@@ -7,6 +7,7 @@ import com.tf_arquiweb.entities.alertaMovil;
 import com.tf_arquiweb.serviceinterfaces.IalertaMovilService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -31,6 +32,7 @@ public class alertaMovilController {
             return m.map(y,alertaMovilDTO.class);
         }).collect(Collectors.toList());
     }
+    @PreAuthorize("hasAnyAuthority('policia')")
     @GetMapping("/CantidadaAlertasxCiudadanoEnDistrito")
     public List<alertaCiudadanoUbiDTO> QuantityCity(){
         List<String[]> filaLista = aS.AlertasxCiudadanoxDistrito();

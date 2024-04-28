@@ -7,6 +7,7 @@ import com.tf_arquiweb.entities.caso;
 import com.tf_arquiweb.serviceinterfaces.IcasoService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -31,6 +32,7 @@ public class casoController {
             return m.map(y,casoDTO.class);
         }).collect(Collectors.toList());
     }
+    @PreAuthorize("hasAnyAuthority('policia')")
     @GetMapping("/casosxdistrito")
     public List<casoXdistritoDTO> casito(){
         List<String[]> filaLista = cS.findCasosPorDistritoId();
@@ -43,7 +45,7 @@ public class casoController {
         }
         return dtoLista;
     };
-
+    @PreAuthorize("hasAnyAuthority('policia')")
     @GetMapping("/casosresueltoxdistrito")
     public List<casoXdistritoDTO> resueltito(){
         List<String[]> filaLista = cS.findCasosResueltosPorDistrito();
@@ -56,6 +58,7 @@ public class casoController {
         }
         return dtoLista;
     };
+    @PreAuthorize("hasAnyAuthority('policia','ciudadano')")
     @GetMapping("/ciudadanoPorcaso")
     public List<ciudadanoXcasoDTO> ciudadanoPorcaso(){
         List<String[]> filaLista = cS.ciudadanoxcaso();
