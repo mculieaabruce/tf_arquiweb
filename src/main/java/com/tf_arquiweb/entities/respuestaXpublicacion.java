@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "respuestaXpublicacion")
 public class respuestaXpublicacion {
-    @org.springframework.data.annotation.Id
+    @Id
     @ManyToOne
     @JoinColumn(name = "respuesta_id")
     private respuesta respuesta;

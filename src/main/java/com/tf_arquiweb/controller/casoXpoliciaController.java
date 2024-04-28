@@ -31,8 +31,7 @@ public class casoXpoliciaController {
             return m.map(y,casoXpoliciaDTO.class);
         }).collect(Collectors.toList());
     }
-
-    @GetMapping("/CasosAtrasados")
+    @GetMapping("/casosAtrasados")
     public List<casosAtrasadosDTO> casosAtrasados(){
         List<String[]> filaLista = cXpS.casosAtrasados();
         List<casosAtrasadosDTO> dtoLista = new ArrayList<>();
@@ -45,5 +44,5 @@ public class casoXpoliciaController {
             dtoLista.add(dto);
         }
         return dtoLista;
-    }
+    };
 }

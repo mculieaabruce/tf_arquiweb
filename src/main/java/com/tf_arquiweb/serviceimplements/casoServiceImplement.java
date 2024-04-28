@@ -1,5 +1,6 @@
 package com.tf_arquiweb.serviceimplements;
 
+import com.tf_arquiweb.dtos.casoXdistritoDTO;
 import com.tf_arquiweb.entities.caso;
 import com.tf_arquiweb.repositories.casoRepository;
 import com.tf_arquiweb.serviceinterfaces.IcasoService;
@@ -22,9 +23,19 @@ public class casoServiceImplement implements IcasoService {
     public List<caso> list() {
         return cR.findAll();
     }
+    @Override
+    public List<String[]> findCasosPorDistritoId() {
+        return cR.findCasosPorDistritoId();
+    }
+
+    public List<String[]> findCasosResueltosPorDistrito()
+    {
+        return cR.findCasosResueltosPorDistrito();
+    }
 
     @Override
     public List<String[]> ciudadanoxcaso() {
         return cR.ciudadanoxcaso();
     }
+
 }
