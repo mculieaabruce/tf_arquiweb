@@ -70,4 +70,6 @@ public class caso {
     public void setForo(com.tf_arquiweb.entities.foro foro) {
         this.foro = foro;
     }
+
+    /*xsd*/
 }
