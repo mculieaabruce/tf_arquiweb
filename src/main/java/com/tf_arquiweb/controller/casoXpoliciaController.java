@@ -3,6 +3,7 @@ package com.tf_arquiweb.controller;
 import com.tf_arquiweb.dtos.casoXpoliciaDTO;
 import com.tf_arquiweb.dtos.casosAtrasadosDTO;
 import com.tf_arquiweb.entities.casoXpolicia;
+import com.tf_arquiweb.dtos.casoresueltoxpoliciaDTO;
 import com.tf_arquiweb.serviceinterfaces.IcasoXpoliciaService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,4 +46,18 @@ public class casoXpoliciaController {
         }
         return dtoLista;
     };
+    @GetMapping("/casosresueltoxpolicia")
+    public List<casoresueltoxpoliciaDTO> casosresueltoxpolicia(){
+        List<String[]> filaLista = cXpS.casosresueltosxpolicia();
+        List<casoresueltoxpoliciaDTO> dtoLista = new ArrayList<>();
+        for(String[] columna:filaLista){
+            casoresueltoxpoliciaDTO dto = new casoresueltoxpoliciaDTO();
+            dto.setEstado(columna[0]);
+            dto.setPolicia(columna[1]);
+            dto.setCaso(columna[2]);
+            dtoLista.add(dto);
+        }
+        return dtoLista;
+    };
+
 }
