@@ -8,4 +8,5 @@ import java.util.List;
 public interface IrespuestaService {
     public void insert(respuesta ciu);
     public List<respuesta> list();
+    public List<String[]> listrespuestaxpolicia();
 }
