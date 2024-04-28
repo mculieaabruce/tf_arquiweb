@@ -7,26 +7,35 @@ import java.time.LocalDate;
 @Entity
 @Table(name = "casoXpolicia")
 public class casoXpolicia {
-    @Id
+    @EmbeddedId
+    private Union id;
     @ManyToOne
-    @JoinColumn(name = "caso_id")
+    @MapsId("caso_id")
     private caso caso;
-    @Id
     @ManyToOne
-    @JoinColumn(name = "policia_id")
+    @MapsId("policia_id")
     private policia policia;
     private LocalDate fecha_revision;
-    @Column(name = "estado",nullable = false,length = 20)
+    @Column(name = "estado", nullable = false, length = 20)
     private String estado;
 
     public casoXpolicia() {
     }
 
-    public casoXpolicia(com.tf_arquiweb.entities.caso caso, com.tf_arquiweb.entities.policia policia, LocalDate fecha_revision, String estado) {
+    public casoXpolicia(Union id, com.tf_arquiweb.entities.caso caso, com.tf_arquiweb.entities.policia policia, LocalDate fecha_revision, String estado) {
+        this.id = id;
         this.caso = caso;
         this.policia = policia;
         this.fecha_revision = fecha_revision;
         this.estado = estado;
+    }
+
+    public Union getId() {
+        return id;
+    }
+
+    public void setId(Union id) {
+        this.id = id;
     }
 
     public com.tf_arquiweb.entities.caso getCaso() {
