@@ -33,18 +33,28 @@ public class casoController {
     }
     @GetMapping("/casosxdistrito")
     public List<casoXdistritoDTO> casito(){
-        return cS.findCasosPorDistritoId().stream().map(y->{
-            ModelMapper m = new ModelMapper();
-            return m.map(y, casoXdistritoDTO.class);
-        }).collect(Collectors.toList());
+        List<String[]> filaLista = cS.findCasosPorDistritoId();
+        List<casoXdistritoDTO> dtoLista = new ArrayList<>();
+        for(String[] columna:filaLista){
+            casoXdistritoDTO dto = new casoXdistritoDTO();
+            dto.setDistrito(columna[0]);
+            dto.setNumero_de_casos(Integer.parseInt(columna[1]));
+            dtoLista.add(dto);
+        }
+        return dtoLista;
     };
 
     @GetMapping("/casosresueltoxdistrito")
     public List<casoXdistritoDTO> resueltito(){
-        return cS.findCasosResueltosPorDistrito().stream().map(y->{
-            ModelMapper m = new ModelMapper();
-            return m.map(y, casoXdistritoDTO.class);
-        }).collect(Collectors.toList());
+        List<String[]> filaLista = cS.findCasosResueltosPorDistrito();
+        List<casoXdistritoDTO> dtoLista = new ArrayList<>();
+        for(String[] columna:filaLista){
+            casoXdistritoDTO dto = new casoXdistritoDTO();
+            dto.setDistrito(columna[0]);
+            dto.setCasos_resueltos(Integer.parseInt(columna[1]));
+            dtoLista.add(dto);
+        }
+        return dtoLista;
     };
     @GetMapping("/ciudadanoPorcaso")
     public List<ciudadanoXcasoDTO> ciudadanoPorcaso(){
