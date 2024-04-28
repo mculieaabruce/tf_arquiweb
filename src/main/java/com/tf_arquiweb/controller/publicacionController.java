@@ -39,8 +39,8 @@ public class publicacionController {
 
         for (String[] columna : filaLista) {
             publixCiudadanoDTO dto = new publixCiudadanoDTO();
-            dto.setIdUsuario(Integer.parseInt(columna[0]));
-            dto.setQuantityPubli(Integer.parseInt(columna[1]));
+            dto.getIdUsuario(Integer.parseInt(columna[0]));
+            dto.getQuantityPubli(Integer.parseInt(columna[1]));
             dtoLista.add(dto);
         }
         return dtoLista;

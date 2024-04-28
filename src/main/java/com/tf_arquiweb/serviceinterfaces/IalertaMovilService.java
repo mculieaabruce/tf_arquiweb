@@ -7,4 +7,5 @@ import java.util.List;
 public interface IalertaMovilService {
     public void insert(alertaMovil a);
     public List<alertaMovil> list();
+    public List<String[]> AlertasxCiudadanoxDistrito();
 }

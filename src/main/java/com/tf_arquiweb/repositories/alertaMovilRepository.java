@@ -9,5 +9,9 @@ import java.util.List;
 
 @Repository
 public interface alertaMovilRepository extends JpaRepository<alertaMovil, Integer> {
-
+    @Query(value = "SELECT ciudadano_id, COUNT(*) AS cantidad_alertas\n" +
+            "FROM alerta_movil\n" +
+            "WHERE ubicacion = 'Nombre del Distrito'\n" +
+            "GROUP BY ciudadano_id;" , nativeQuery = true)
+    public List<String[]> AlertasxCiudadanoxDistrito();
 }
