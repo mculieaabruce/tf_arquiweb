@@ -27,5 +27,11 @@ public interface casoXpoliciaRepository extends JpaRepository<casoXpolicia, Inte
             "where cp.estado = 'EN PROCESO' " +
             "order by cp.fecha desc", nativeQuery = true)
     public List<String[]> casosAtrasados();
+    @Query(value = "SELECT po.nombre,\n" +
+            "(SELECT count(*) \n" +
+            "FROM caso_xpolicia csp \n" +
+            "WHERE csp.policia_id = po.id AND csp.estado = 'Resuelto') as casos_resueltos_policia\n" +
+            "FROM policia po", nativeQuery = true)
+    public List<String[]> casosresueltosxpolicia();
 
 }
