@@ -19,7 +19,7 @@ public class publicacion {
     private LocalTime hora_creacion;
     @ManyToOne
     @JoinColumn(name = "autor_id", nullable = false)
-    private Usuario usuario;
+    private Users user;
     @Column(name="estado",nullable = false,length = 15)
     private String estado;
     @ManyToOne
@@ -29,12 +29,12 @@ public class publicacion {
     public publicacion() {
     }
 
-    public publicacion(int id, String descripcion, LocalDate fecha_creacion, LocalTime hora_creacion, Usuario usuario, String estado, com.tf_arquiweb.entities.foro foro) {
+    public publicacion(int id, String descripcion, LocalDate fecha_creacion, LocalTime hora_creacion, Users user, String estado, com.tf_arquiweb.entities.foro foro) {
         this.id = id;
         this.descripcion = descripcion;
         this.fecha_creacion = fecha_creacion;
         this.hora_creacion = hora_creacion;
-        this.usuario = usuario;
+        this.user = user;
         this.estado = estado;
         this.foro = foro;
     }
@@ -71,12 +71,12 @@ public class publicacion {
         this.hora_creacion = hora_creacion;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Users getUsuario() {
+        return user;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsuario(Users usuario) {
+        this.user = usuario;
     }
 
     public String getEstado() {

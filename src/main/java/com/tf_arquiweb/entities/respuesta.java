@@ -1,7 +1,6 @@
 package com.tf_arquiweb.entities;
 
 import jakarta.persistence.*;
-import com.tf_arquiweb.entities.Usuario;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -22,16 +21,16 @@ public class respuesta {
 
     @ManyToOne
     @JoinColumn(name="autor_id", nullable = false )
-    private Usuario usuario;
+    private Users user;
     public respuesta(){
     }
 
-    public respuesta(int id, String contenido, LocalDate fecha_creacion, LocalTime hora_creacion, Usuario usuario) {
+    public respuesta(int id, String contenido, LocalDate fecha_creacion, LocalTime hora_creacion, Users user) {
         this.id = id;
         this.contenido = contenido;
         this.fecha_creacion = fecha_creacion;
         this.hora_creacion = hora_creacion;
-        this.usuario = usuario;
+        this.user = user;
     }
 
     public int getId() {
@@ -66,11 +65,11 @@ public class respuesta {
         this.hora_creacion = hora_creacion;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Users getUsuario() {
+        return user;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsuario(Users user) {
+        this.user = user;
     }
 }

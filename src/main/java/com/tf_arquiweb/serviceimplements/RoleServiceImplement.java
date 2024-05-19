@@ -28,10 +28,8 @@ public class RoleServiceImplement implements IRoleService {
     }
 
     @Override
-    public Optional<Role> listID(Long idRol) {
-        return rR.findById(idRol);
+    public Role listID(Long idRol) {
+        return rR.findById(idRol).orElse(new Role());
     }
-
-
 
 }

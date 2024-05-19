@@ -11,15 +11,15 @@ public class foro {
     private String nombreForo;
     @ManyToOne
     @JoinColumn(name = "idUsuario")
-    private Usuario usuario;
+    private Users user;
 
     public foro() {
     }
 
-    public foro(int id, String nombreForo, Usuario usuario) {
+    public foro(int id, String nombreForo, Users user) {
         this.id = id;
         this.nombreForo = nombreForo;
-        this.usuario = usuario;
+        this.user = user;
     }
 
     public int getId() {
@@ -38,11 +38,11 @@ public class foro {
         this.nombreForo = nombreForo;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Users getUsuario() {
+        return user;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setUsuario(Users user) {
+        this.user = user;
     }
 }

@@ -1,14 +1,12 @@
 package com.tf_arquiweb.controller;
 
-import ch.qos.logback.classic.encoder.JsonEncoder;
-import com.tf_arquiweb.dtos.UsuarioDTO;
-import com.tf_arquiweb.entities.Usuario;
-import com.tf_arquiweb.serviceinterfaces.IUsuarioService;
+import com.tf_arquiweb.dtos.UsersDTO;
+import com.tf_arquiweb.entities.Users;
+import com.tf_arquiweb.serviceinterfaces.IUsersService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,26 +14,26 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/usuariospage")
-public class UsuarioController {
+public class UsersController {
     @Autowired
-    private IUsuarioService iU;
+    private IUsersService iU;
     @Autowired
     private PasswordEncoder passwordEncoder;
     @PreAuthorize("hasAnyAuthority('admin')")
     @PostMapping
-    public void Registrar(@RequestBody UsuarioDTO usuarioDTO){
+    public void Registrar(@RequestBody UsersDTO usersDTO){
         ModelMapper m= new ModelMapper();
-        Usuario u=m.map(usuarioDTO, Usuario.class);
+        Users u=m.map(usersDTO, Users.class);
         String encodedPassword = passwordEncoder.encode(u.getPassword());
         u.setPassword(encodedPassword);
         iU.insert(u);
     }
     @PreAuthorize("hasAnyAuthority('admin')")
     @GetMapping
-    public List<UsuarioDTO> listar(){
+    public List<UsersDTO> listar(){
         return iU.list().stream().map(y->{
             ModelMapper m= new ModelMapper();
-            return m.map(y,UsuarioDTO.class);
+            return m.map(y, UsersDTO.class);
         }).collect(Collectors.toList());
     }
 }

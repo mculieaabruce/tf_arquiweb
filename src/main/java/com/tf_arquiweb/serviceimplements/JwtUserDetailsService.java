@@ -1,7 +1,8 @@
 package com.tf_arquiweb.serviceimplements;
 
-import com.tf_arquiweb.entities.Usuario;
-import com.tf_arquiweb.repositories.UsuarioRepository;
+import com.tf_arquiweb.entities.Users;
+import com.tf_arquiweb.repositories.IUsersRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,10 +15,11 @@ import java.util.List;
 
 @Service
 public class JwtUserDetailsService implements UserDetailsService {
-    private UsuarioRepository repo;
+    @Autowired
+    private IUsersRepository repo;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Usuario user = repo.findByUsername(username);
+        Users user = repo.findByUsername(username);
 
         if (user == null) {
             throw new UsernameNotFoundException(String.format("User not exists", username));

@@ -2,10 +2,6 @@ package com.tf_arquiweb.dtos;
 
 
 
-import com.tf_arquiweb.entities.Usuario;
-import com.tf_arquiweb.entities.foro;
-import jakarta.persistence.*;
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 

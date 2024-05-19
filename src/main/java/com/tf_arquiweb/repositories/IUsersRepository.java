@@ -1,6 +1,6 @@
 package com.tf_arquiweb.repositories;
 
-import com.tf_arquiweb.entities.Usuario;
+import com.tf_arquiweb.entities.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -9,11 +9,10 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
-    public Usuario findByUsername(String username);
-
+public interface IUsersRepository extends JpaRepository<Users, Long>{
+    public Users findByUsername(String username);
     //BUSCAR POR NOMBRE
-    @Query("select count(u.username) from Usuario u where u.username =:username")
+    @Query("select count(u.username) from Users u where u.username =:username")
     public int buscarUsername(@Param("username") String nombre);
 
 
