@@ -6,7 +6,7 @@ public class UsersDTO {
     private String password;
     private Boolean enabled;
 
-    public Long getIdUsuario() {
+    public Long  getIdUsuario() {
         return id;
     }
 
